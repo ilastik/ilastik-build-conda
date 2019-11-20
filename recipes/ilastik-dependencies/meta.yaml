@@ -38,9 +38,8 @@ requirements:
     - python                    {{ python }}
     - numpy                     {{ numpy }}
 
-    - decorator                 
-    - fftw                      
-    - future                   
+    - decorator
+    - future
     - greenlet                  
     - h5py                      {{ h5py }}
     - hdf5                      {{ hdf5 }}
@@ -55,11 +54,8 @@ requirements:
     - pyqt                      {{ pyqt }}
     - pyqtgraph
     - pyopengl
-    - python-dateutil                
-    - pytz                      
     - qimage2ndarray            
     - qt                        {{ qt }}
-    - readline                                 # [not win]
     - requests
     - scikit-image
     - scikit-learn              {{ sklearn }}*
