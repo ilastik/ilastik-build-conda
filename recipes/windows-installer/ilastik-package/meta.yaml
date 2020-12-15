@@ -11,7 +11,7 @@ requirements:
   run:
     - git
     - ilastik-dependencies-no-solvers
-    - ilastik-meta
+    - ilastik
 
 about:
   summary: "A meta-package for creating installers."

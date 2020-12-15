@@ -45,7 +45,7 @@ int main(int argc, char **argv)
     // we got something like 'ilastik_root\ilastik.exe' and extract the 'ilastik_root' part
     std::string prefix = this_exe.substr(0, this_exe.rfind("\\"));
     // create the paths to python and ilastik
-    std::string script_name    = prefix + "\\ilastik-meta\\ilastik\\ilastik.py";
+    std::string script_name    = prefix + "\\ilastik\\ilastik.py";
     std::string python_home    = prefix;
     std::string python_exe     = prefix + "\\python.exe";
     std::string qt_plugin_path = prefix + "\\Library\\plugins";

@@ -9,7 +9,7 @@
 )
 
 for /f %%i in (
-    'python -c "import re;s = open('..\ilastik-meta\ilastik\ilastik\__init__.py').read();version_line = re.findall(r'__version_info__ *=.*', s)[0];exec(version_line);print('.'.join(map(str,__version_info__)))"'
+    'python -c "import re;s = open('..\ilastik\ilastik\__init__.py').read();version_line = re.findall(r'__version_info__ *=.*', s)[0];exec(version_line);print('.'.join(map(str,__version_info__)))"'
 ) do set ILASTIK_PKG_VERSION=%%i
 
 @echo "Building package for version %ILASTIK_PKG_VERSION%"

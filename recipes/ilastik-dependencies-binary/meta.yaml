@@ -1,14 +1,14 @@
 package:
   name: "ilastik-dependencies-binary"
-  version: "0.1"
+  version: "0.2"
 
 build:
-  number: 1000
+  number: 0
 
 requirements:
   run:
     - ilastik-dependencies
-    - ilastik-meta
+    - ilastik
     - ilastik-package  # [win]
     - ilastik-exe  # [win]
     - ilastik-launch  # [not win]

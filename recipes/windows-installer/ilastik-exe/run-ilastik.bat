@@ -20,8 +20,8 @@ if DEFINED GUROBI_PATH set PATH=%PATH%;%GUROBI_PATH%
 
 rem set more paths
 set QTDIR=%INSTALL_DIR%Library
-IF ["%ILASTIK_DIR%"] EQU [""] set ILASTIK_DIR=%INSTALL_DIR%ilastik-meta
-set PYTHONPATH=%ILASTIK_DIR%\lazyflow;%ILASTIK_DIR%\volumina;%ILASTIK_DIR%\ilastik
+IF ["%ILASTIK_DIR%"] EQU [""] set ILASTIK_DIR=ilastik
+set PYTHONPATH=%ILASTIK_DIR%\volumina;%ILASTIK_DIR%
 set PYTHONHOME=%INSTALL_DIR%
 set PYTHONNOUSERSITE=1
 set QT_PLUGIN_PATH=%QTDIR%\plugins
@@ -63,27 +63,14 @@ set failed=0
 
 echo ----------------------------
 echo Running volumina tests...
-cd "%ILASTIK_DIR%\volumina\tests"
-"%INSTALL_DIR%python\python" -c "import nose; nose.run()"
+cd "%ILASTIK_DIR%\volumina"
+"%INSTALL_DIR%python\python" -m pytest
 if %errorlevel% neq 0 set failed=1
 
 echo ----------------------------
-echo Running lazyflow tests...
-cd "%ILASTIK_DIR%\lazyflow\tests"
-"%INSTALL_DIR%python\python" -c "import nose; nose.run()"
-if %errorlevel% neq 0 set failed=1
-
-echo ----------------------------
-echo Running ilastik headless tests...
-cd "%ILASTIK_DIR%\ilastik\tests"
-"%INSTALL_DIR%python\python" -c "import nose; nose.run()"
-if %errorlevel% neq 0 set failed=1
-
-rem Do not run all GUI tests, but run just one to verify there are no major problems with app startup.
-echo ----------------------------
-echo Running basic pixel classification GUI test...
-cd "%ILASTIK_DIR%\ilastik\tests"
-"%INSTALL_DIR%python\python" test_applets\pixelClassification\testPixelClassificationGui.py
+echo Running ilastik and lazyflow tests...
+cd "%ILASTIK_DIR%"
+"%INSTALL_DIR%python\python" -m pytest --run-legacy-gui
 if %errorlevel% neq 0 set failed=1
 
 if %failed% NEQ 0 ENDLOCAL & exit /b 1

@@ -1,10 +1,10 @@
 package:
   name: ilastik-launch
-  version: 0.1
+  version: 0.2
 
 build:
-  number: 1001
+  number: 0
 
 requirements:
   run:
-    - ilastik-meta
+    - ilastik
