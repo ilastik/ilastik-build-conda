@@ -37,6 +37,9 @@ Source: "Scripts\*"; DestDir: "{app}\Scripts"; Flags: ignoreversion recursesubdi
 Source: "conda-meta\*"; DestDir: "{app}\conda-meta"; Flags: ignoreversion recursesubdirs
 ; the grpc library relies on Library\mingw64
 Source: "Library\mingw64\*"; DestDir: "{app}\Library\mingw64"; Flags: ignoreversion recursesubdirs
+; tiktorch server binary
+Source: "tiktorch\*"; DestDir: "{app}\tiktorch"; Flags: ignoreversion recursesubdirs
+
 
 [Icons]
 Name: "{group}\ilastik"; Filename: "{app}\ilastik.exe"; IconFilename: "{app}\ilastik-icon.ico"

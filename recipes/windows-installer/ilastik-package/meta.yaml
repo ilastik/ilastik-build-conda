@@ -7,9 +7,7 @@ build:
 requirements:
   build:
     - git
-    - ilastik-dependencies-no-solvers
   run:
-    - git
     - ilastik-dependencies-no-solvers
     - ilastik-meta
 
